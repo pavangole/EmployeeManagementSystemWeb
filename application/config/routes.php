@@ -1,9 +1,8 @@
 <?php
-<<<<<<< HEAD
-defined('BASEPATH') OR exit('No direct script access allowed');
-=======
+
+
 defined('BASEPATH') or exit('No direct script access allowed');
->>>>>>> 496733559d8eb9f9e1e6839214838ae1c6fcf99a
+
 
 /*
 | -------------------------------------------------------------------------
@@ -53,13 +52,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-<<<<<<< HEAD
 $route['default_controller'] = 'welcome';
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
-
-=======
-// $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
@@ -71,7 +64,22 @@ $route['home']['GET'] = 'Home/HomeController/index';
 $route['apply_leave']['GET'] = 'Leave/LeaveController/index';
 
 //leave
+
 $route['apply_leave']['POST'] = 'Leave/LeaveController/apply_leave';
 $route['leave_history']['GET'] = 'Leave/LeaveController/leave_history';
 $route['leave_types']['GET'] = 'Leave/LeaveController/leave_types';
->>>>>>> 496733559d8eb9f9e1e6839214838ae1c6fcf99a
+
+$route['apply_leave']['GET'] = 'leave/leaveController/apply_leave';
+$route['all_leave']['GET'] = 'leave/leaveController/all_Leave';
+$route['leave_history']['GET'] = 'leave/leaveController/leave_history';
+$route['leave_types']['GET'] = 'leave/leaveController/leave_types';
+$route['leave_type/delete/(:any)']['GET'] = 'leave/leaveController/delete_type/$1'; //Deleting with ID
+$route['leave_application/delete/(:any)']['GET'] = 'leave/leaveController/delete_application/$1'; //Deleting with ID
+$route['all_leave/approve_leave/(:any)']['GET'] = 'leave/leaveController/approve_leave/$1'; //Approve Leave
+$route['all_leave/reject_leave/(:any)']['GET'] = 'leave/leaveController/reject_leave/$1'; //Reject Leave
+$route['insert']['GET'] = 'leave/leaveController/insert';
+$route['post_leave']['POST'] = 'leave/leaveController/post_leave_types';
+$route['delete']['POST'] = 'leave/leaveController/deleteType';
+$route['post_apply_leave']['POST'] = 'leave/leaveController/post_apply_leave';
+$route['status']['GET'] = 'leave/leaveController/status';
+$route['update_status']['POST'] = 'leave/leaveController/update_status';
